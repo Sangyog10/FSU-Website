@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
-
+import Logo from "../../assets/white_fsu.png"
 const Nav = (props) => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
       <div className="container-fluid">
         <Link className="navbar-brand text-light" to="/">
-          Logo
+         <img src={Logo} width={40} height={40} alt="Logo" /> <span>Free Student Union</span>
         </Link>
         <button
           className="navbar-toggler text-white "
