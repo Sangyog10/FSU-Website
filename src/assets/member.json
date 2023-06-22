@@ -1,0 +1,179 @@
+{
+  "president": [
+    {
+      "id": 101,
+      "name": "Nabin Shrestha",
+      "position": "President",
+      "image": "",
+      "email": "075bag017@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/ishan.stha.98",
+      "number": "9804369740"
+    },
+    {
+      "id": 102,
+      "name": "Saugat Bhattarai",
+      "position": "Vice-President",
+      "image": "",
+      "email": "075bag017@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/saugat.bhattarai.549",
+      "number": "9813951590"
+    }
+  ],
+
+  "members": [
+    {
+      "id": 1001,
+      "name": "Maheshwar Prasad Bhatta",
+      "position": "Treasurer",
+      "image": "",
+      "email": "076bct045@ioepc.edu.np",
+
+      "facebook": "https://www.facebook.com/maheshwarprashad.bhattmayalu",
+      "number": "9868877403"
+    },
+    {
+      "id": 1002,
+      "name": "Rajan Kumar Yadav",
+      "position": "Secretary",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/razzan.adhikari",
+      "number": "9800867224"
+    },
+    {
+      "id": 1003,
+      "name": "Manohar Kumar Singh",
+      "position": "Vice-Secretary",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/manoharkumar.singh.37669",
+      "number": "9819802850"
+    },
+    {
+      "id": 1004,
+      "name": "Aayush Karki",
+      "position": "Member",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/karkig69",
+      "number": "9869849963"
+    },
+    {
+      "id": 1005,
+      "name": "Purushottam Rijal",
+      "position": "Member",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/purushottam.rijal.355",
+      "number": "9867178268"
+    },
+    {
+      "id": 1006,
+      "name": "Sagar Bashyal",
+      "position": "Member",
+      "image": "",
+      "email": "077bce070@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/sagar.bashyal.775",
+      "number": "9867355869"
+    },
+    {
+      "id": 1007,
+      "name": "Sejal Podar",
+      "position": "Member",
+      "image": "",
+      "email": "077bct076@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/profile.php?id=100011662726935",
+      "number": "9811388555"
+    },
+    {
+      "id": 1008,
+      "name": "Amir Karki",
+      "position": "Member",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/anoj.karki.1297",
+      "number": "9823140082"
+    },
+    {
+      "id": 1009,
+      "name": "Prasanga Dahal",
+      "position": "Member",
+      "image": "",
+      "email": "076bct058@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/dahalprasanga.77",
+      "number": "9862316136"
+    },
+    {
+      "id": 1010,
+      "name": "Prabhav Katwal",
+      "position": "Member",
+      "image": "",
+      "email": "",
+      "facebook": "link",
+      "number": "9824322210"
+    },
+    {
+      "id": 1011,
+      "name": "Manisha Karki",
+      "position": "Member",
+      "image": "",
+      "email": "076bce040@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/ishaan.katwalii",
+      "number": "9843491256"
+    },
+    {
+      "id": 1012,
+      "name": "Binita Gautam",
+      "position": "Member",
+      "image": "",
+      "email": "076bel009@ioepc.edu.np",
+      "facebook": "link",
+      "number": "9846696331"
+    },
+    {
+      "id": 1013,
+      "name": "Ishwor Dahal",
+      "position": "Member",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/ishordahal92",
+      "number": "9811092556"
+    },
+    {
+      "id": 1014,
+      "name": "Karan Magar",
+      "position": "Members",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/karan.magar.165685",
+      "number": "9817941371"
+    },
+    {
+      "id": 1015,
+      "name": "Kushal Pandit",
+      "position": "Member",
+      "image": "",
+      "email": "076bme044@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/kushal.pandit.177",
+      "number": "9845965123"
+    },
+    {
+      "id": 1016,
+      "name": "Avishek Pangeni",
+      "position": "Member",
+      "image": "",
+      "email": "",
+      "facebook": "https://www.facebook.com/abhishek.pangeni.9",
+      "number": "9864575407"
+    },
+    {
+      "id": 1017,
+      "name": "Sabin Dhital",
+      "position": "Member",
+      "image": "",
+      "email": "077bce068@ioepc.edu.np",
+      "facebook": "https://www.facebook.com/sabin.dhital.923",
+      "number": "9823559685"
+    }
+  ]
+}
