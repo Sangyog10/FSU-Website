@@ -14,3 +14,6 @@
   --color-fsu1: #ef6934;
   --color-fsu2: #3491d6;
 }
+body {
+  overflow-x: hidden;
+}

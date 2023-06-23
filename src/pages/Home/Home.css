@@ -100,6 +100,9 @@
   align-items: center;
   justify-content: center;
 }
+.about-campus-content p {
+  font-size: 1.2rem;
+}
 .about-campus-content h2 {
   font-size: 3rem;
   font-weight: bold;
@@ -127,6 +130,12 @@
   }
   .about-campus-content {
     width: 90%;
+  }
+  .about-content h2 {
+    font-size: 2.5rem;
+  }
+  .about-campus-content h2 {
+    font-size: 2.5rem;
   }
 }
 @media screen and (max-width: 1080px) {
