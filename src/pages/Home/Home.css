@@ -1,3 +1,8 @@
+/* body{
+  background: var(--gradient-bg);
+
+} */
+
 .hero-container {
   background: var(--gradient-bg);
   display: flex;
