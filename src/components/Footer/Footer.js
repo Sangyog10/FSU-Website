@@ -7,10 +7,21 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="container">
-        <div className="row">
-          <div className="col-sm-12 col-md-6">
-            <h6>About</h6>
-            <p className="text-justify">
+        <div className="row justify-content-between">
+          <div className=" col-lg-4 col-sm-6 col-md-6">
+            <h6>Message from the Chief</h6>
+            <p className="text-justify my-3">
+              I am honored to be your President of the Free Student Union.
+              Together, we will strive to create an inclusive and engaging
+              university experience. Your voice matters, and I am here to
+              listen, advocate, and make positive changes. Let's work together
+              to foster a supportive community and seize opportunities for
+              growth. Thank you for your trust and support.
+            </p>
+          </div>
+          <div className="col-lg-4 col-sm-6 col-md-6">
+            <h6>Message from the President</h6>
+            <p className="text-justify my-3">
               The Free Student Union of Purwanchal Campus Dharan is a dynamic
               and inclusive organization dedicated to promoting the rights and
               welfare of students at Purwanchal Campus in Dharan. As a
@@ -20,27 +31,9 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="col-xs-6 col-md-3">
-            <h6>Categories</h6>
-            <ul className="footer-links">
-              <li>
-                <Link to="/">Kta ho</Link>
-              </li>
-              <li>
-                <Link to="/">K lekhnu</Link>
-              </li>
-              <li>
-                <Link to="/">Yeha</Link>
-              </li>
-              <li>
-                <Link to="/">Vana na</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="col-xs-6 col-md-3">
+          <div className="col-xs-6 col-md-3 ">
             <h6>Quick Links</h6>
-            <ul className="footer-links">
+            <ul className="footer-links my-3">
               <li>
                 <Link to="/">Home</Link>
               </li>
