@@ -1,9 +1,9 @@
 .hero-container {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--gradient-bg);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  min-height: 100vh;
+  min-height: 90vh;
   min-width: 100vw;
 }
 .hero-image img {
@@ -11,7 +11,121 @@
   height: 500px;
   transform: rotateY(180deg);
 }
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .hero-content h1 {
-  color: black;
-  font-size: 5rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.hero-content h1 span {
+  color: var(--color-footer);
+  font-weight: bold;
+}
+.hero-container p {
+  font-size: 1.2rem;
+  color: white;
+  width: 70%;
+  text-align: start;
+}
+.hero-content button {
+  padding: 10px;
+  background: var(--color-fsu1);
+  border-radius: 5px;
+  border-style: none;
+}
+.hero-container button a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.card-container {
+  position: absolute;
+  top: 95%;
+  left: 10%;
+}
+
+.about-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.about-image img {
+  height: 400px;
+  width: 500px;
+  border-radius: 10px;
+}
+.about-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.about-content {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about-content p {
+  font-size: 1.2rem;
+}
+/* Campus content */
+.about-campus-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.about-campus-image img {
+  height: 400px;
+  width: 500px;
+  border-radius: 10px;
+}
+.about-campus-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-campus-content h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-content p {
+    width: 100%;
+  }
+  .about-container {
+    flex-direction: column;
+  }
+  .about-content p {
+    font-size: 1rem;
+  }
+  .about-content {
+    width: 90%;
+  }
+  .about-campus-container {
+    flex-direction: column;
+  }
+  .about-campus-content {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .card-container {
+    position: static;
+  }
 }

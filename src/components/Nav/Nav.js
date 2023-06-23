@@ -1,13 +1,32 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
+import { useState, useEffect } from "react";
 
 const Nav = (props) => {
+  const [isNavbarFixed, setIsNavbarFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const shouldFixNavbar = scrollPosition > 600;
+
+      setIsNavbarFixed(shouldFixNavbar);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <nav className="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+    <nav
+      className={`navbar navbar-expand-lg ${
+        isNavbarFixed ? "fixed-navbar" : ""
+      }`}
+      data-bs-theme="dark"
+    >
       <div className="container-fluid">
         <Link className="navbar-brand text-light" to="/">
-          Logo
+          <img src="/images/gallery/logo.jpg" alt="" />
         </Link>
         <button
           className="navbar-toggler text-white "
@@ -42,6 +61,16 @@ const Nav = (props) => {
             <li className="nav-item">
               <NavLink className="nav-link text-light" to="/contact">
                 Contact
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-light" to="/contact">
+                Notices
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link text-light" to="/contact">
+                Insight
               </NavLink>
             </li>
           </ul>
