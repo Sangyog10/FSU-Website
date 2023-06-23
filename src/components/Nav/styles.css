@@ -1,10 +1,20 @@
 .navbar {
-  background-color: var(--color-bg);
+  background: var(--color-bg);
 }
 li {
   font-weight: bold;
 }
-/* .links-container {
-  position: relative;
-  left: 40%;
-} */
+.navbar img {
+  height: 50px;
+  width: 50px;
+}
+li:hover {
+  color: var(--color-bg);
+  opacity: 0.5;
+}
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
