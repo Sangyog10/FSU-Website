@@ -1,11 +1,16 @@
 import mongoose from "mongoose";
 
 const connectToMongo = () => {
-  try {
-    const connect = mongoose.connect(process.env.URI);
-    console.log("Connected To Database");
-  } catch (error) {
-    console.log("Error in mongo");
-  }
+  const url =
+    "mongodb+srv://somes:somes123@cluster0.bara8js.mongodb.net/?retryWrites=true&w=majority";
+
+  mongoose
+    .connect(url)
+    .then(() => {
+      console.log("connected ");
+    })
+    .catch(() => {
+      console.log("could not connect hehe");
+    });
 };
 export default connectToMongo;
