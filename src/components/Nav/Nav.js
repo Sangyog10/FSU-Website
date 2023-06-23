@@ -1,7 +1,11 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
+
 import { useState, useEffect } from "react";
+
+
+import Logo from "../../assets/white_fsu.png"
 
 const Nav = (props) => {
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
@@ -26,7 +30,11 @@ const Nav = (props) => {
     >
       <div className="container-fluid">
         <Link className="navbar-brand text-light" to="/">
+
           <img src="/images/gallery/logo.jpg" alt="" />
+
+         <img src={Logo} width={40} height={40} alt="Logo" /> <span>Free Student Union</span>
+
         </Link>
         <button
           className="navbar-toggler text-white "
