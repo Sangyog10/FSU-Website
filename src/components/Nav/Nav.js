@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
+
 import { useState, useEffect } from "react";
+
+import Logo from "../../assets/white_fsu.png";
 
 const Nav = (props) => {
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
@@ -26,7 +29,8 @@ const Nav = (props) => {
     >
       <div className="container-fluid">
         <Link className="navbar-brand text-light" to="/">
-          <img src="/images/gallery/logo.jpg" alt="" />
+          <img src={Logo} width={40} height={40} alt="Logo" />{" "}
+          <span>Free Student Union</span>
         </Link>
         <button
           className="navbar-toggler text-white "
@@ -40,11 +44,11 @@ const Nav = (props) => {
           <span className="navbar-toggler-icon  " />
         </button>
         <div
-          className="collapse navbar-collapse justify-content-center"
+          className="collapse navbar-collapse justify-content-center "
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav   mb-2 mb-lg-0   d-flex justify-content-center  align-items-center">
-            <li className="nav-item">
+            <li className="nav-item mx-3">
               <NavLink
                 className="nav-link active text-light"
                 aria-current="page"
@@ -53,22 +57,22 @@ const Nav = (props) => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mx-3">
               <NavLink className="nav-link text-light" to="/committee">
                 Committee
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mx-3">
               <NavLink className="nav-link text-light" to="/contact">
                 Contact
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mx-3">
               <NavLink className="nav-link text-light" to="/contact">
                 Notices
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mx-3">
               <NavLink className="nav-link text-light" to="/contact">
                 Insight
               </NavLink>
