@@ -16,3 +16,24 @@ export const requireSignIn = async (req, res, next) => {
     res.status();
   }
 };
+// Admin access
+
+export const isAdmin = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user._id);
+    if (user.role !== 1) {
+      return res.status(401).send({
+        success: false,
+        message: "Unauthorized access",
+      });
+    }
+    next();
+  } catch (error) {
+    console.log(error.message);
+    res.status(401).send({
+      success: false,
+      error,
+      message: "Error in admin middleware",
+    });
+  }
+};
