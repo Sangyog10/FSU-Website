@@ -126,9 +126,9 @@ const Signup = () => {
                     }}
                   >
                     <div className="card-body p-5">
-                      <h2 className="text-uppercase text-center text-white mb-5">
+                      <h3 className="text-uppercase text-center text-white mb-5">
                         Create an account
-                      </h2>
+                      </h3>
                       <div className="form-outline mb-4">
                         <input
                           type="text"
