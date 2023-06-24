@@ -18,3 +18,20 @@ li:hover {
   width: 100%;
   z-index: 999;
 }
+.login-signup button {
+  padding: 5px;
+  background: var(--color-fsu1);
+  border-radius: 5px;
+  border-style: none;
+}
+button {
+  padding: 5px;
+  background: var(--color-fsu1);
+  border-radius: 5px;
+  border-style: none;
+}
+@media screen and (max-width: 996px) {
+  .login-signup {
+    flex-direction: column;
+  }
+}

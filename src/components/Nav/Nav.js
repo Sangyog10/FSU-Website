@@ -1,12 +1,14 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
+import { useAuth } from "../../context/Auth";
 
 import { useState, useEffect } from "react";
 
 import Logo from "../../assets/white_fsu.png";
 
 const Nav = (props) => {
+  const [auth, setAuth] = useAuth();
   const [isNavbarFixed, setIsNavbarFixed] = useState(false);
 
   useEffect(() => {
@@ -20,6 +22,15 @@ const Nav = (props) => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogout = () => {
+    setAuth({
+      ...auth,
+      user: null,
+      token: "",
+    });
+    localStorage.removeItem("auth");
+  };
   return (
     <nav
       className={`navbar navbar-expand-lg ${
@@ -74,9 +85,37 @@ const Nav = (props) => {
             </li>
             <li className="nav-item mx-3">
               <NavLink className="nav-link text-light" to="/contact">
-                Insight
+                Insights
               </NavLink>
             </li>
+            {!auth.user ? (
+              <>
+                <div className="login-signup d-flex mx-4 align-items-center">
+                  <li className="nav-item ">
+                    <NavLink className="nav-link text-light" to="/signup">
+                      Signup
+                    </NavLink>
+                  </li>
+                  <button>
+                    <Link className="nav-link text-light" to="/login">
+                      Login
+                    </Link>
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <button>
+                  <Link
+                    className="nav-link text-light"
+                    to="/login"
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </Link>
+                </button>
+              </>
+            )}
           </ul>
         </div>
       </div>
