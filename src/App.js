@@ -5,6 +5,8 @@ import Home from "./pages/Home/Home";
 import Committee from "./pages/Committee/Committee";
 import Contact from "./pages/ContactUs/Contact";
 import GoToTop from "./components/topButton/GoToTop";
+import Signup from "./pages/signup/Signup";
+import Login from "./pages/login/Login";
 const App = () => {
   return (
     <Router>
@@ -12,6 +14,8 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/committee" element={<Committee />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
       <GoToTop />
     </Router>

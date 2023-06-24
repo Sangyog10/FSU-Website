@@ -1,0 +1,31 @@
+/* .form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  background: var(--gradient-bg);
+}
+.form-container form {
+  min-width: 37vw;
+  min-height: 50vh;
+  width: 30vw;
+  display: flex;
+  background: var(--gradient-bg);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 3%;
+}
+.form-container form h1 {
+  color: white;
+}
+.form-container form button {
+  background-color: var(--color-fsu1);
+  border-style: none;
+  color: white;
+  font-weight: bold;
+}
+.form-container form button:hover {
+  background-color: white;
+  color: var(--color-fsu1);
+} */
