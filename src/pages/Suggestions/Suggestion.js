@@ -1,29 +1,23 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Layout from "../../components/Layout/Layout";
 import "./Suggestion.css";
-import { async } from "q";
 
 const Suggestion = () => {
-  const [userData, setUserData] = useState("");
+  const [msg, setMsg] = useState("");
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    // const res = await fetch("/", {
-    //   method: "post",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({ userData }),
-    // });
-    // const response = await res.json();
-    setUserData("");
+    setMsg("");
+    try {
+      alert("Your suggestion have been submitted");
+      await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/suggestion`, {
+        msg,
+      });
+    } catch (e) {
+      console.log(e);
+    }
   };
-
-  const inputHandler = (e) => {
-    setUserData(e.target.value);
-    console.log(userData);
-  };
-
   return (
     <Layout>
       <div className=" row suggestion-box">
@@ -31,7 +25,7 @@ const Suggestion = () => {
           onSubmit={formSubmitHandler}
           className="col-xl-5"
           id="suggestion_box"
-          method="post"
+          action="post"
         >
           <h3>Suggestion Box</h3>
 
@@ -48,8 +42,10 @@ const Suggestion = () => {
               tabIndex="5"
               name="suggestion_text"
               required
-              value={userData}
-              onChange={inputHandler}
+              value={msg}
+              onChange={(e) => {
+                setMsg(e.target.value);
+              }}
             ></textarea>
           </fieldset>
           <fieldset>
