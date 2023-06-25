@@ -126,7 +126,7 @@ const Signup = () => {
                     }}
                   >
                     <div className="card-body p-5">
-                      <h3 className="text-uppercase text-center text-white mb-5">
+                      <h3 className="text-uppercase text-center text-white mb-2">
                         Create an account
                       </h3>
                       <div className="form-outline mb-4">
@@ -139,12 +139,6 @@ const Signup = () => {
                           value={name}
                           required
                         />
-                        <label
-                          className="form-label text-white my-2"
-                          htmlFor="form3Example1cg"
-                        >
-                          Your Name
-                        </label>
                       </div>
                       <div className="mb-3">
                         <input
@@ -156,12 +150,6 @@ const Signup = () => {
                           required
                           value={email}
                         />
-                        <label
-                          className="form-label text-white my-2"
-                          htmlFor="form3Example1cg"
-                        >
-                          Email
-                        </label>
                       </div>
                       <div className="mb-3">
                         <input
@@ -173,12 +161,6 @@ const Signup = () => {
                           required
                           value={phone}
                         />
-                        <label
-                          className="form-label text-white my-2"
-                          htmlFor="form3Example1cg"
-                        >
-                          Phone Number
-                        </label>
                       </div>
                       <div className="mb-3">
                         <input
@@ -190,12 +172,6 @@ const Signup = () => {
                           required
                           value={address}
                         />
-                        <label
-                          className="form-label text-white my-2"
-                          htmlFor="form3Example1cg"
-                        >
-                          Address
-                        </label>
                       </div>
                       <div className="mb-3">
                         <input
@@ -206,12 +182,6 @@ const Signup = () => {
                           required
                           value={password}
                         />
-                        <label
-                          className="form-label text-white my-2"
-                          htmlFor="form3Example1cg"
-                        >
-                          Password
-                        </label>
                       </div>
                       <div className="mb-3">
                         <input
@@ -222,26 +192,20 @@ const Signup = () => {
                           required
                           value={answer}
                         />
-                        <label
-                          className="form-label text-white my-2"
-                          htmlFor="form3Example1cg"
-                        >
-                          Enter your Birthplace
-                        </label>
                       </div>
 
                       <div className="d-flex justify-content-center">
                         <button
                           type="submit"
-                          className="btn btn-primary btn-block btn-lg gradient-custom-4 text-body"
+                          className="btn btn-primary btn-block btn-lg gradient-custom-4 text-white"
                         >
                           SignUp
                         </button>
                       </div>
 
-                      <p className="text-center text-muted mt-5 mb-0">
+                      <p className="text-center text-white  mb-0">
                         Have already an account?{" "}
-                        <Link to="/login" className="fw-bold text-body">
+                        <Link to="/login" className="fw-bold text-white">
                           Login
                         </Link>
                       </p>

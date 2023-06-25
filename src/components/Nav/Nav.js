@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
 import { useAuth } from "../../context/Auth";
-
+import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 
 import Logo from "../../assets/white_fsu.png";
@@ -30,6 +30,7 @@ const Nav = (props) => {
       token: "",
     });
     localStorage.removeItem("auth");
+    toast.success("Logged Out Successfully");
   };
   return (
     <nav
