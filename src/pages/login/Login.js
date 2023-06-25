@@ -48,45 +48,6 @@ const Login = () => {
 
   return (
     <Layout>
-      {/* <div className="form-container">
-        <form onSubmit={handleSubmit}>
-          <h1>Login</h1>
-
-          <div className="mb-3">
-            <input
-              type="email"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              placeholder="Email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              value={email}
-            />
-          </div>
-
-          <div className="mb-3">
-            <input
-              type="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              value={password}
-            />
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-          <div className="mb-3">
-            <Link type="button" to="/forgotPassword" className="text-white">
-              Forgot Password?
-            </Link>
-          </div>
-        </form>
-      </div> */}
       <MDBContainer fluid>
         <form onSubmit={handleSubmit}>
           <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -138,35 +99,6 @@ const Login = () => {
                   <button type="submit" className="btn btn-primary">
                     Login
                   </button>
-                  {/* 
-                  <div className="d-flex flex-row mt-3 mb-5">
-                    <MDBBtn
-                      tag="a"
-                      color="none"
-                      className="m-3"
-                      style={{ color: "white" }}
-                    >
-                      <MDBIcon fab icon="facebook-f" size="lg" />
-                    </MDBBtn>
-
-                    <MDBBtn
-                      tag="a"
-                      color="none"
-                      className="m-3"
-                      style={{ color: "white" }}
-                    >
-                      <MDBIcon fab icon="twitter" size="lg" />
-                    </MDBBtn>
-
-                    <MDBBtn
-                      tag="a"
-                      color="none"
-                      className="m-3"
-                      style={{ color: "white" }}
-                    >
-                      <MDBIcon fab icon="google" size="lg" />
-                    </MDBBtn>
-                  </div> */}
 
                   <div className="my-4">
                     <p className="mb-0">
