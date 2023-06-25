@@ -107,6 +107,7 @@ const Home = () => {
           />
         </div>
       </div>
+      <hr />
     </Layout>
   );
 };

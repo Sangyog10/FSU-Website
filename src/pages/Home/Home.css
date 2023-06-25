@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  min-height: 90vh;
+  min-height: 80vh;
   min-width: 100vw;
 }
 .hero-image img {
@@ -28,7 +28,7 @@
   font-weight: bold;
 }
 .hero-content h1 span {
-  color: var(--color-footer);
+  color: var(--color-fsu1);
   font-weight: bold;
 }
 .hero-container p {
@@ -51,7 +51,7 @@
 
 .card-container {
   position: absolute;
-  top: 95%;
+  top: 80%;
   left: 10%;
 }
 

@@ -7,18 +7,26 @@ import Contact from "./pages/ContactUs/Contact";
 import GoToTop from "./components/topButton/GoToTop";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/committee" element={<Committee />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
-      </Routes>
-      <GoToTop />
-    </Router>
+    <>
+      <ToastContainer autoClose={1500} pauseOnHover={false} />
+
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/committee" element={<Committee />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+        </Routes>
+        <GoToTop />
+      </Router>
+    </>
   );
 };
 export default App;
