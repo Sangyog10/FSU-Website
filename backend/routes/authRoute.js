@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 import { requireSignIn, isAdmin } from "../middlewares/authMiddleware.js";
 import { body, validationResult } from "express-validator";
+import collection from "../models/suggestModel.js";
 
 const router = express.Router();
 
@@ -214,6 +215,15 @@ router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
   res.status(200).send({
     ok: true,
   });
+});
+
+//suggestion box
+router.post("/suggestion", async (req, res) => {
+  const { msg } = req.body;
+  const data = {
+    msg: msg,
+  };
+  await collection.insertMany([data]);
 });
 
 export default router;
