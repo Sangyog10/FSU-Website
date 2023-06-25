@@ -4,14 +4,12 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import {
-  MDBBtn,
   MDBContainer,
   MDBRow,
   MDBCol,
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBIcon,
 } from "mdb-react-ui-kit";
 import { useAuth } from "../../context/Auth.js";
 import "../signup/styles.css";
@@ -103,14 +101,10 @@ const Login = () => {
               >
                 <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
                   <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-                  <p className="text-white-50 mb-5">
-                    Please enter your login and password!
-                  </p>
 
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
-                    label="Email address"
                     id="formControlLg"
                     type="email"
                     size="60px"
@@ -122,7 +116,6 @@ const Login = () => {
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
-                    label="Password"
                     id="formControlLg"
                     type="password"
                     size="60px"
