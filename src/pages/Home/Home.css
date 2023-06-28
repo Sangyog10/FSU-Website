@@ -1,14 +1,9 @@
-/* body{
-  background: var(--gradient-bg);
-
-} */
-
 .hero-container {
   background: var(--gradient-bg);
   display: flex;
   align-items: center;
   justify-content: space-around;
-  min-height: 90vh;
+  min-height: 80vh;
   min-width: 100vw;
 }
 .hero-image img {
@@ -51,7 +46,7 @@
 
 .card-container {
   position: absolute;
-  top: 95%;
+  top: 80%;
   left: 10%;
 }
 

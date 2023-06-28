@@ -138,40 +138,11 @@ const Login = () => {
                   <button type="submit" className="btn btn-primary">
                     Login
                   </button>
-                  {/* 
-                  <div className="d-flex flex-row mt-3 mb-5">
-                    <MDBBtn
-                      tag="a"
-                      color="none"
-                      className="m-3"
-                      style={{ color: "white" }}
-                    >
-                      <MDBIcon fab icon="facebook-f" size="lg" />
-                    </MDBBtn>
-
-                    <MDBBtn
-                      tag="a"
-                      color="none"
-                      className="m-3"
-                      style={{ color: "white" }}
-                    >
-                      <MDBIcon fab icon="twitter" size="lg" />
-                    </MDBBtn>
-
-                    <MDBBtn
-                      tag="a"
-                      color="none"
-                      className="m-3"
-                      style={{ color: "white" }}
-                    >
-                      <MDBIcon fab icon="google" size="lg" />
-                    </MDBBtn>
-                  </div> */}
 
                   <div className="my-4">
                     <p className="mb-0">
                       Don't have an account?{" "}
-                      <Link type="button" to="/signup" className="text-white">
+                      <Link type="button" to="/signUp" className="text-white">
                         Sign Up
                       </Link>
                     </p>

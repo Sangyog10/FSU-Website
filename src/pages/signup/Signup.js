@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import "./styles.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import "./styles.css";
 
 const Signup = () => {
   const [name, setName] = useState("");
