@@ -19,7 +19,7 @@ const Suggestion = () => {
     }
   };
   return (
-    <Layout>
+    <Layout title={"Suggestion-FSU"}>
       <div className=" row suggestion-box">
         <form
           onSubmit={formSubmitHandler}

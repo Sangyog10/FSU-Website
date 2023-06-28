@@ -84,11 +84,6 @@ const Nav = (props) => {
                 Notices
               </NavLink>
             </li>
-   <li className="nav-item mx-3">
-              <NavLink className="nav-link text-light" to="/suggestion">
-                Suggestions
-              </NavLink>
-            </li>
 
             {!auth.user ? (
               <>
@@ -107,6 +102,11 @@ const Nav = (props) => {
               </>
             ) : (
               <>
+                <li className="nav-item mx-3">
+                  <NavLink className="nav-link text-light" to="/suggestion">
+                    Suggestions
+                  </NavLink>
+                </li>
                 <button>
                   <Link
                     className="nav-link text-light"
