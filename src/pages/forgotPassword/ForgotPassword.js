@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../../components/Layout/Layout";
 import { toast } from "react-toastify";
 import axios from "axios";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   MDBContainer,
   MDBRow,
@@ -11,32 +12,22 @@ import {
   MDBCardBody,
   MDBInput,
 } from "mdb-react-ui-kit";
-import { useAuth } from "../../context/Auth.js";
-import "../signup/styles.css";
 
-const Login = () => {
-  const [password, setPassword] = useState("");
+const ForgotPassword = () => {
+  const [newPassword, setnewPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [answer, setAnswer] = useState("");
   const navigate = useNavigate();
-  const location = useLocation();
-  const [auth, setAuth] = useAuth();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API}/api/v1/auth/login`,
-        { email, password }
+        `${process.env.REACT_APP_API}/api/v1/auth/forgot-password`,
+        { email, newPassword, answer }
       );
       if (res && res.data.success) {
-        setAuth({
-          ...auth,
-          user: res.data.user,
-          token: res.data.token,
-        });
-        localStorage.setItem("auth", JSON.stringify(res.data));
         toast.success(res.data.message);
-        navigate(location.state || "/");
+        navigate("/login");
       } else {
         toast.error(res.data.message);
       }
@@ -45,7 +36,6 @@ const Login = () => {
       toast.error("Something went wrong");
     }
   };
-
   return (
     <Layout>
       <MDBContainer fluid>
@@ -61,7 +51,7 @@ const Login = () => {
                 }}
               >
                 <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
-                  <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
+                  <h2 className="fw-bold mb-2 text-uppercase">Set Password</h2>
 
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
@@ -80,34 +70,26 @@ const Login = () => {
                     id="formControlLg"
                     type="password"
                     size="60px"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="New 
+                    Password"
+                    onChange={(e) => setnewPassword(e.target.value)}
                     required
-                    value={password}
+                    value={newPassword}
                   />
-
-                  <p className="small mb-3 pb-lg-2">
-                    <Link
-                      type="button"
-                      to="/forgotPassword"
-                      className="text-white"
-                    >
-                      Forgot Password?
-                    </Link>
-                  </p>
-
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    id="formControlLg"
+                    type="text"
+                    size="60px"
+                    placeholder="Enter your birth place"
+                    onChange={(e) => setAnswer(e.target.value)}
+                    required
+                    value={answer}
+                  />
                   <button type="submit" className="btn btn-primary">
-                    Login
+                    Change Password
                   </button>
-
-                  <div className="my-4">
-                    <p className="mb-0">
-                      Don't have an account?{" "}
-                      <Link type="button" to="/signUp" className="text-white">
-                        Sign Up
-                      </Link>
-                    </p>
-                  </div>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
@@ -118,4 +100,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;

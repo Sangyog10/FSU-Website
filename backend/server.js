@@ -3,7 +3,11 @@ import dotenv from "dotenv";
 import connectToMongo from "./db.js";
 import cors from "cors";
 import authRoute from "./routes/authRoute.js";
+
+import noticeRoute from "./routes/noticeRoute.js";
+
 import suggestionRoute from "./routes/suggestionRoute.js";
+
 
 const app = express();
 
@@ -19,6 +23,9 @@ connectToMongo();
 
 // routes
 app.use("/api/v1/auth", authRoute);
+
+app.use("/api/v1/notice", noticeRoute);
+
 app.use("/api/v1/suggestion", suggestionRoute);
 
 app.listen(process.env.PORT, () => {
