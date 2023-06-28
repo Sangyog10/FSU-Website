@@ -11,15 +11,30 @@ const router = express.Router();
 router.post(
   "/register",
   [
-    body("name", "Enter a valid name").isLength({ min: 3 }),
+    body("name")
+      .isLength({ min: 3 })
+      .withMessage("The name must be at least 3 characters"),
     body("email", "Enter a valid email").isEmail(),
-    body("password", "Password must be atleast 5 characters").isLength({
-      min: 5,
-    }),
+    body("password")
+      .isLength({
+        min: 8,
+      })
+      .withMessage("Password must be atleast 5 characters"),
   ],
   async (req, res) => {
     let { name, email, password, phone, address, answer } = req.body;
     try {
+      const errors = validationResult(req);
+
+      if (!errors.isEmpty()) {
+        return res.status(200).send({
+          success: false,
+          message: errors
+            .array()
+            .map((err) => err.msg)
+            .join(" "),
+        });
+      }
       if (!name) {
         res.send({
           message: "Name is required",
@@ -96,6 +111,16 @@ router.post(
   ],
   async (req, res) => {
     try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(200).send({
+          success: false,
+          message: errors
+            .array()
+            .map((err) => err.msg)
+            .join(" "),
+        });
+      }
       let { email, password } = req.body;
       const user_data = await User.findOne({ email });
       // validation
