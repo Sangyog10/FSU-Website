@@ -22,6 +22,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [answer, setAnswer] = useState("");
+  const [roll, setRoll] = useState("");
 
   const navigate = useNavigate();
   console.log(bloodGroup);
@@ -31,7 +32,7 @@ const Signup = () => {
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        { name, email, password, phone, bloodGroup, answer }
+        { name, email, password, phone, bloodGroup, roll, answer }
       );
       if (res && res.data.success) {
         console.log(res);
@@ -110,16 +111,15 @@ const Signup = () => {
 
                     <option value="AB-">AB-</option>
                   </select>
-
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
-                    type="password"
+                    type="text"
                     size="60px"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Roll(PUR078BCT095) "
+                    onChange={(e) => setRoll(e.target.value)}
                     required
-                    value={password}
+                    value={roll}
                   />
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
@@ -130,6 +130,16 @@ const Signup = () => {
                     onChange={(e) => setAnswer(e.target.value)}
                     required
                     value={answer}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="password"
+                    size="60px"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    value={password}
                   />
 
                   <button type="submit" className="btn btn-primary">

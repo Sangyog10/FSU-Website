@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    roll: {
+      type: String,
+      required: true,
+    },
     bloodGroup: {
       type: String,
       required: true,

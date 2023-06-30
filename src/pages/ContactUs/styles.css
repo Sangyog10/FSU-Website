@@ -1,19 +1,10 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.container {
-  width: 60%;
-  padding: 45px;
-}
 .row {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .col-md-7 {
   padding: 20px;
 }
-.col-md-5 {
+.contact-inf {
   background: var(--gradient-bg);
   padding: 20px;
   color: white;
@@ -43,4 +34,4 @@
   .container {
     width: 100%;
   }
-} */
+}

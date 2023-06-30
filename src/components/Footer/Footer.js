@@ -11,23 +11,24 @@ const Footer = () => {
           <div className=" col-lg-4 col-sm-6 col-md-6">
             <h6>Message from the Chief</h6>
             <p className="text-justify my-3">
+              {" "}
+              I fully support the formation of a free student union on campus.
+              It provides a platform for your voices to be heard, addresses your
+              concerns, and promotes an inclusive environment. I commit to
+              supporting the union by providing necessary resources and
+              maintaining open communication. Let's work together to make a
+              positive impact on our campus community.
+            </p>
+          </div>
+          <div className="col-lg-4 col-sm-6 col-md-6">
+            <h6>Message from the President</h6>
+            <p className="text-justify my-3">
               I am honored to be your President of the Free Student Union.
               Together, we will strive to create an inclusive and engaging
               university experience. Your voice matters, and I am here to
               listen, advocate, and make positive changes. Let's work together
               to foster a supportive community and seize opportunities for
               growth. Thank you for your trust and support.
-            </p>
-          </div>
-          <div className="col-lg-4 col-sm-6 col-md-6">
-            <h6>Message from the President</h6>
-            <p className="text-justify my-3">
-              The Free Student Union of Purwanchal Campus Dharan is a dynamic
-              and inclusive organization dedicated to promoting the rights and
-              welfare of students at Purwanchal Campus in Dharan. As a
-              student-led union, we strive to create an empowering and
-              supportive environment for all students, fostering a sense of
-              unity and collaboration.
             </p>
           </div>
 
@@ -45,9 +46,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/notices">Notices</Link>
-              </li>
-              <li>
-                <Link to="/insight">Insight</Link>
               </li>
             </ul>
           </div>

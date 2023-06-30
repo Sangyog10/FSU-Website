@@ -21,7 +21,7 @@ router.post(
       .withMessage("Password must be atleast 5 characters"),
   ],
   async (req, res) => {
-    let { name, email, password, phone, bloodGroup, answer } = req.body;
+    let { name, email, password, phone, bloodGroup, roll, answer } = req.body;
     try {
       const errors = validationResult(req);
 
@@ -47,6 +47,11 @@ router.post(
       if (!email) {
         res.send({
           message: "Email is required",
+        });
+      }
+      if (!roll) {
+        res.send({
+          message: "Roll No is required",
         });
       }
       if (!phone) {
@@ -75,6 +80,7 @@ router.post(
           phone,
           bloodGroup,
           answer,
+          roll,
         });
 
         res.status(201).send({
@@ -156,6 +162,7 @@ router.post(
           email: user_data.email,
           phone: user_data.phone,
           bloodGroup: user_data.bloodGroup,
+          roll: user_data.roll,
           role: user_data.role,
         },
         token,
