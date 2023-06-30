@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
 import { useAuth } from "../../context/Auth";
-import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Logo from "../../assets/white_fsu.png";

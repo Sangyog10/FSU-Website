@@ -8,13 +8,11 @@ import Contact from "./pages/ContactUs/Contact";
 import GoToTop from "./components/topButton/GoToTop";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
+import PageNotFound from "./pages/pageNotFound/PageNotFound";
 
 const App = () => {
   return (
@@ -32,6 +30,7 @@ const App = () => {
           <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
 
           <Route path="/suggestion" element={<Suggestion />}></Route>
+          <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
         <GoToTop />
       </Router>
