@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import {
+  MDBContainer,
+  MDBRow,
+  MDBCol,
+  MDBCard,
+  MDBCardBody,
+  MDBInput,
+} from "mdb-react-ui-kit";
 import axios from "axios";
 import "./styles.css";
 
@@ -29,7 +37,7 @@ const Signup = () => {
         toast.success(res.data.message);
         navigate("/login");
       } else {
-        console.log(res.data.message);
+        toast.error(res.data.message);
       }
     } catch (error) {
       console.log(error);
@@ -37,112 +45,100 @@ const Signup = () => {
     }
   };
   return (
-    <Layout>
-      <section className="my-4">
+    <Layout title={"Signup-FSU"}>
+      <MDBContainer fluid>
         <form onSubmit={handleSubmit}>
-          <div className="mask d-flex align-items-center h-100 gradient-custom-3 ">
-            <div className="container h-100">
-              <div className="row d-flex justify-content-center align-items-center h-100">
-                <div className="col-12 col-md-9 col-lg-7 col-xl-4">
-                  <div
-                    className="card"
-                    style={{
-                      borderRadius: "15px",
-                      background: "var(--gradient-bg)",
-                    }}
-                  >
-                    <div className="card-body p-5">
-                      <h3 className="text-uppercase text-center text-white mb-2">
-                        Create an account
-                      </h3>
-                      <div className="form-outline mb-4">
-                        <input
-                          type="text"
-                          className="form-control"
-                          aria-describedby="emailHelp"
-                          placeholder="Your Name"
-                          onChange={(e) => setName(e.target.value)}
-                          value={name}
-                          required
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <input
-                          type="email"
-                          className="form-control"
-                          aria-describedby="emailHelp"
-                          placeholder="Email"
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                          value={email}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <input
-                          type="text"
-                          className="form-control"
-                          aria-describedby="emailHelp"
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder="Phone No"
-                          required
-                          value={phone}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <input
-                          type="text"
-                          className="form-control"
-                          aria-describedby="emailHelp"
-                          placeholder="Address"
-                          onChange={(e) => setAddress(e.target.value)}
-                          required
-                          value={address}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <input
-                          type="password"
-                          className="form-control"
-                          placeholder="Password"
-                          onChange={(e) => setPassword(e.target.value)}
-                          required
-                          value={password}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Enter your birth place"
-                          onChange={(e) => setAnswer(e.target.value)}
-                          required
-                          value={answer}
-                        />
-                      </div>
+          <MDBRow className="d-flex justify-content-center align-items-center h-100">
+            <MDBCol col="12">
+              <MDBCard
+                className=" text-white my-5 mx-auto"
+                style={{
+                  borderRadius: "1rem",
+                  maxWidth: "400px",
+                  background: "var(--gradient-bg)",
+                }}
+              >
+                <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
+                  <h2 className=" mb-2 text-uppercase">Sign UP</h2>
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="text"
+                    size="60px"
+                    placeholder="Your Name"
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    value={name}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="text"
+                    size="60px"
+                    placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    value={email}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="text"
+                    size="60px"
+                    placeholder="Your Phone Number"
+                    onChange={(e) => setPhone(e.target.value)}
+                    required
+                    value={phone}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="text"
+                    size="60px"
+                    placeholder="Your Address"
+                    onChange={(e) => setAddress(e.target.value)}
+                    required
+                    value={address}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="password"
+                    size="60px"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    value={password}
+                  />
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    type="text"
+                    size="60px"
+                    placeholder="Your Birth Place"
+                    onChange={(e) => setAnswer(e.target.value)}
+                    required
+                    value={answer}
+                  />
 
-                      <div className="d-flex justify-content-center">
-                        <button
-                          type="submit"
-                          className="btn btn-primary btn-block btn-lg gradient-custom-4 text-white"
-                        >
-                          SignUp
-                        </button>
-                      </div>
+                  <button type="submit" className="btn btn-primary">
+                    Signup
+                  </button>
 
-                      <p className="text-center text-white  mb-0">
-                        Have already an account?{" "}
-                        <Link to="/login" className="fw-bold text-white">
-                          Login
-                        </Link>
-                      </p>
-                    </div>
+                  <div className="my-4">
+                    <p className="text-center text-white  mb-0">
+                      Have already an account?{" "}
+                      <Link to="/login" className="fw-bold text-white">
+                        Login
+                      </Link>
+                    </p>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </MDBRow>
         </form>
-      </section>
+      </MDBContainer>
     </Layout>
   );
 };

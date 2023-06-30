@@ -4,7 +4,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout title={"Home-FSU"}>
       <div className="hero-container container">
         <div className="hero-content">
           <h1>

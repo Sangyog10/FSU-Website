@@ -7,7 +7,7 @@ import { FaPhoneAlt, FaFacebookMessenger } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout title={"Contact-FSU"}>
       <div className="col-lg-12 col-sm-10 my-4 div_map">
         {
           <iframe

@@ -47,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <Layout>
+    <Layout title={"Login-FSU"}>
       <MDBContainer fluid>
         <form onSubmit={handleSubmit}>
           <MDBRow className="d-flex justify-content-center align-items-center h-100">
