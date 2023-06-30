@@ -4,7 +4,6 @@ import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 import { requireSignIn, isAdmin } from "../middlewares/authMiddleware.js";
 import { body, validationResult } from "express-validator";
-
 const router = express.Router();
 
 // Creating User
@@ -22,7 +21,7 @@ router.post(
       .withMessage("Password must be atleast 5 characters"),
   ],
   async (req, res) => {
-    let { name, email, password, phone, address, answer } = req.body;
+    let { name, email, password, phone, bloodGroup, answer } = req.body;
     try {
       const errors = validationResult(req);
 
@@ -55,9 +54,9 @@ router.post(
           error: "Phone No is required",
         });
       }
-      if (!address) {
+      if (!bloodGroup) {
         res.send({
-          message: "Address is required",
+          message: "BloodGroup is required",
         });
       }
       if (!answer) {
@@ -74,7 +73,7 @@ router.post(
           email,
           password,
           phone,
-          address,
+          bloodGroup,
           answer,
         });
 
@@ -156,7 +155,7 @@ router.post(
           name: user_data.name,
           email: user_data.email,
           phone: user_data.phone,
-          address: user_data.address,
+          bloodGroup: user_data.bloodGroup,
           role: user_data.role,
         },
         token,

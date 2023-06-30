@@ -103,6 +103,11 @@ const Nav = (props) => {
             ) : (
               <>
                 <li className="nav-item mx-3">
+                  <NavLink className="nav-link text-light" to="/notes">
+                    Notes
+                  </NavLink>
+                </li>
+                <li className="nav-item mx-3">
                   <NavLink className="nav-link text-light" to="/suggestion">
                     Suggestions
                   </NavLink>

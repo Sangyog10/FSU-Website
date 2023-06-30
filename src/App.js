@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
+import PageNotFound from "./pages/pageNotFound/PageNotFound";
+import Notes from "./pages/notes/Notes";
 
 const App = () => {
   return (
@@ -25,11 +27,11 @@ const App = () => {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<Signup />}></Route>
-
           <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
-
           <Route path="/suggestion" element={<Suggestion />}></Route>
+          <Route path="/notes" element={<Notes />}></Route>
 
+          <Route path="*" element={<PageNotFound />}></Route>
         </Routes>
         <GoToTop />
       </Router>
