@@ -22,7 +22,7 @@ const Contact = () => {
           ></iframe>
         }
       </div>
-      <div className="container">
+      <div className="container py-4">
         <div className="row">
           <div className="col-md-7">
             <h4>Send Message</h4>

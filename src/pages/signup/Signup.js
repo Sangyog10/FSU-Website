@@ -18,19 +18,20 @@ import "./styles.css";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+  const [bloodGroup, setBloodGroup] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [answer, setAnswer] = useState("");
 
   const navigate = useNavigate();
+  console.log(bloodGroup);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        { name, email, password, phone, address, answer }
+        { name, email, password, phone, bloodGroup, answer }
       );
       if (res && res.data.success) {
         console.log(res);
@@ -90,16 +91,26 @@ const Signup = () => {
                     required
                     value={phone}
                   />
-                  <MDBInput
-                    wrapperClass="mb-4 mx-5 w-100"
-                    labelClass="text-white"
-                    type="text"
-                    size="60px"
-                    placeholder="Your Address"
-                    onChange={(e) => setAddress(e.target.value)}
-                    required
-                    value={address}
-                  />
+
+                  <select
+                    className="form-select mb-4 mx-5 w-100"
+                    aria-label="Default select example"
+                    placeholder="Your Blood Group"
+                    value={bloodGroup}
+                    onChange={(e) => setBloodGroup(e.target.value)}
+                  >
+                    <option value="">Enter Your Blood Group</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+
+                    <option value="AB-">AB-</option>
+                  </select>
+
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
