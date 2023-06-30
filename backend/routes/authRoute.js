@@ -95,7 +95,7 @@ router.post(
         });
       }
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       res.status(500).send({
         success: false,
         message: "Error in registration",
@@ -118,6 +118,7 @@ router.post(
   ],
   async (req, res) => {
     try {
+      let { email, password } = req.body;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(200).send({
@@ -169,7 +170,7 @@ router.post(
         token,
       });
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       res.status(500).send({
         success: false,
         message: "Error in login",
