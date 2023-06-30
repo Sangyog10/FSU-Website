@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
 import { useAuth } from "../../context/Auth";
-
+import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Logo from "../../assets/white_fsu.png";
@@ -84,11 +84,7 @@ const Nav = (props) => {
                 Notices
               </NavLink>
             </li>
-            <li className="nav-item mx-3">
-              <NavLink className="nav-link text-light" to="/contact">
-                Insights
-              </NavLink>
-            </li>
+
             {!auth.user ? (
               <>
                 <div className="login-signup d-flex mx-5  align-items-center">
@@ -106,6 +102,11 @@ const Nav = (props) => {
               </>
             ) : (
               <>
+                <li className="nav-item mx-3">
+                  <NavLink className="nav-link text-light" to="/suggestion">
+                    Suggestions
+                  </NavLink>
+                </li>
                 <button>
                   <Link
                     className="nav-link text-light"

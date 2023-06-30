@@ -4,7 +4,7 @@ import "./Home.css";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout title={"Home-FSU"}>
       <div className="hero-container container">
         <div className="hero-content">
           <h1>
@@ -30,7 +30,7 @@ const Home = () => {
       <div className="container card-container">
         <div className="row g-3 ">
           <div className="col-12 col-md-5 col-lg-4">
-            <div className="card " style={{ width: "18rem" }}>
+            <div className="card ">
               <div className="card-body">
                 <h3 className="card-title text-center">Advocacy</h3>
                 <p className="card-text">
@@ -40,7 +40,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-12 col-md-5 col-lg-4">
-            <div className="card " style={{ width: "18rem" }}>
+            <div className="card ">
               <div className="card-body">
                 <h3 className="card-title text-center">Inclusivity</h3>
                 <p className="card-text">
@@ -50,7 +50,7 @@ const Home = () => {
             </div>
           </div>
           <div className="col-12 col-md-5 col-lg-4">
-            <div className="card " style={{ width: "18rem" }}>
+            <div className="card ">
               <div className="card-body">
                 <h3 className="card-title text-center">Transparency</h3>
                 <p className="card-text">

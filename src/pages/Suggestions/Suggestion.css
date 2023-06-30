@@ -1,0 +1,66 @@
+.suggestion-box {
+	display: flex;
+    justify-content: center;
+}
+
+
+#suggestion_box {
+	background:#F9F9F9;
+	padding:25px;
+	margin:50px 0;
+}
+
+#suggestion_box h3 {
+	color: #F96;
+	display: block;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+	min-width: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+#suggestion_box textarea {
+	width:100%;
+	border:1px solid #CCC;
+	background:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+}
+
+#suggestion_box textarea:hover {
+	-webkit-transition:border-color 0.3s ease-in-out;
+	-moz-transition:border-color 0.3s ease-in-out;
+	transition:border-color 0.3s ease-in-out;
+	border:1px solid #AAA;
+}
+
+#suggestion_box button[type="submit"] {
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:rgb(80, 93, 169);
+	color:#FFF;
+	margin:0 0 5px;
+	padding:10px;
+	font-size:15px;
+}
+
+#suggestion_box button[type="submit"]:hover {
+	background:#09C;
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#suggestion_box button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#suggestion_box input:focus, #suggestion_box textarea:focus {
+	outline:0;
+	border:1px solid #999;
+}

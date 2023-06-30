@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import {
   MDBContainer,
   MDBRow,
@@ -12,28 +12,20 @@ import {
   MDBCardBody,
   MDBInput,
 } from "mdb-react-ui-kit";
-import axios from "axios";
-import "./styles.css";
 
-const Signup = () => {
-  const [name, setName] = useState("");
+const ForgotPassword = () => {
+  const [newPassword, setnewPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
   const [answer, setAnswer] = useState("");
-
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        { name, email, password, phone, address, answer }
+        `${process.env.REACT_APP_API}/api/v1/auth/forgot-password`,
+        { email, newPassword, answer }
       );
       if (res && res.data.success) {
-        console.log(res);
         toast.success(res.data.message);
         navigate("/login");
       } else {
@@ -45,7 +37,7 @@ const Signup = () => {
     }
   };
   return (
-    <Layout title={"Signup-FSU"}>
+    <Layout>
       <MDBContainer fluid>
         <form onSubmit={handleSubmit}>
           <MDBRow className="d-flex justify-content-center align-items-center h-100">
@@ -59,21 +51,13 @@ const Signup = () => {
                 }}
               >
                 <MDBCardBody className="p-5 d-flex flex-column align-items-center mx-auto w-100">
-                  <h2 className=" mb-2 text-uppercase">Sign UP</h2>
+                  <h2 className="fw-bold mb-2 text-uppercase">Set Password</h2>
+
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
-                    type="text"
-                    size="60px"
-                    placeholder="Your Name"
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    value={name}
-                  />
-                  <MDBInput
-                    wrapperClass="mb-4 mx-5 w-100"
-                    labelClass="text-white"
-                    type="text"
+                    id="formControlLg"
+                    type="email"
                     size="60px"
                     placeholder="Email"
                     onChange={(e) => setEmail(e.target.value)}
@@ -83,56 +67,29 @@ const Signup = () => {
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
-                    type="text"
-                    size="60px"
-                    placeholder="Your Phone Number"
-                    onChange={(e) => setPhone(e.target.value)}
-                    required
-                    value={phone}
-                  />
-                  <MDBInput
-                    wrapperClass="mb-4 mx-5 w-100"
-                    labelClass="text-white"
-                    type="text"
-                    size="60px"
-                    placeholder="Your Address"
-                    onChange={(e) => setAddress(e.target.value)}
-                    required
-                    value={address}
-                  />
-                  <MDBInput
-                    wrapperClass="mb-4 mx-5 w-100"
-                    labelClass="text-white"
+                    id="formControlLg"
                     type="password"
                     size="60px"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="New 
+                    Password"
+                    onChange={(e) => setnewPassword(e.target.value)}
                     required
-                    value={password}
+                    value={newPassword}
                   />
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
+                    id="formControlLg"
                     type="text"
                     size="60px"
-                    placeholder="Your Birth Place"
+                    placeholder="Enter your birth place"
                     onChange={(e) => setAnswer(e.target.value)}
                     required
                     value={answer}
                   />
-
                   <button type="submit" className="btn btn-primary">
-                    Signup
+                    Change Password
                   </button>
-
-                  <div className="my-4">
-                    <p className="text-center text-white  mb-0">
-                      Have already an account?{" "}
-                      <Link to="/login" className="fw-bold text-white">
-                        Login
-                      </Link>
-                    </p>
-                  </div>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
@@ -143,4 +100,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default ForgotPassword;
