@@ -7,7 +7,7 @@ const PageNotFound = () => {
       {" "}
       <div class="d-flex align-items-center justify-content-center vh-100">
         <div class="text-center">
-          <h1 class="display-1 fw-bold">404</h1>
+          <h1 class="display-1 fw-bold my-4">404</h1>
           <p class="fs-3">
             {" "}
             <span class="text-danger">Opps!</span> Page not found.
@@ -15,7 +15,7 @@ const PageNotFound = () => {
           <p class="lead">The page you’re looking for doesn’t exist.</p>
           <Link
             to="/"
-            className="btn btn-primary"
+            className="btn btn-secondary"
             target="_self"
             rel="noreferrer noopener"
           >
