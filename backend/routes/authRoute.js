@@ -18,10 +18,10 @@ router.post(
       .isLength({
         min: 8,
       })
-      .withMessage("Password must be atleast 5 characters"),
+      .withMessage("Password must be atleast 8 characters"),
   ],
   async (req, res) => {
-    let { name, email, password, phone, bloodGroup, answer } = req.body;
+    let { name, email, password, phone, bloodGroup, roll, answer } = req.body;
     try {
       const errors = validationResult(req);
 
@@ -47,6 +47,11 @@ router.post(
       if (!email) {
         res.send({
           message: "Email is required",
+        });
+      }
+      if (!roll) {
+        res.send({
+          message: "Roll No is required",
         });
       }
       if (!phone) {
@@ -75,6 +80,7 @@ router.post(
           phone,
           bloodGroup,
           answer,
+          roll,
         });
 
         res.status(201).send({
@@ -89,7 +95,7 @@ router.post(
         });
       }
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       res.status(500).send({
         success: false,
         message: "Error in registration",
@@ -104,12 +110,15 @@ router.post(
   "/login",
   [
     body("email", "Enter a valid email").isEmail(),
-    body("password", "Password must be atleast 5 characters").isLength({
-      min: 5,
-    }),
+    body("password")
+      .isLength({
+        min: 8,
+      })
+      .withMessage("Password must be atleast 8 characters"),
   ],
   async (req, res) => {
     try {
+      let { email, password } = req.body;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
         return res.status(200).send({
@@ -120,7 +129,6 @@ router.post(
             .join(" "),
         });
       }
-      let { email, password } = req.body;
       const user_data = await User.findOne({ email });
       // validation
       if (!email || !password) {
@@ -156,12 +164,13 @@ router.post(
           email: user_data.email,
           phone: user_data.phone,
           bloodGroup: user_data.bloodGroup,
+          roll: user_data.roll,
           role: user_data.role,
         },
         token,
       });
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
       res.status(500).send({
         success: false,
         message: "Error in login",

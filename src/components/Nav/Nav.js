@@ -2,9 +2,8 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styles.css";
 import { useAuth } from "../../context/Auth";
-import { toast } from "react-toastify";
 import { useState, useEffect } from "react";
-
+import { toast } from "react-toastify";
 import Logo from "../../assets/white_fsu.png";
 
 const Nav = (props) => {
@@ -15,7 +14,6 @@ const Nav = (props) => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const shouldFixNavbar = scrollPosition > 600;
-
       setIsNavbarFixed(shouldFixNavbar);
     };
 
@@ -29,8 +27,9 @@ const Nav = (props) => {
       user: null,
       token: "",
     });
+
     localStorage.removeItem("auth");
-    toast.success("Logged Out Successfully");
+    toast.success("Logged Out Succcessfully");
   };
   return (
     <nav
@@ -87,9 +86,9 @@ const Nav = (props) => {
 
             {!auth.user ? (
               <>
-                <div className="login-signup d-flex mx-4 align-items-center">
+                <div className="login-signup d-flex mx-5  align-items-center">
                   <li className="nav-item ">
-                    <NavLink className="nav-link text-light" to="/signup">
+                    <NavLink className="nav-link text-light mx-1" to="/signup">
                       Signup
                     </NavLink>
                   </li>

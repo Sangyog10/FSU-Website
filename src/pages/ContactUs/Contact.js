@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../components/Layout/Layout";
-import "./contact.css";
+import "./styles.css";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt, FaFacebookMessenger } from "react-icons/fa";
@@ -86,7 +86,7 @@ const Contact = () => {
               <button className="btn btn-primary">Send</button>
             </div>
           </div>
-          <div className="col-md-5">
+          <div className="col-md-5 contact-inf">
             <h4 className="text-center">Contact us</h4>
             <hr />
             <div className="mt-5">
