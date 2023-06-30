@@ -18,7 +18,7 @@ router.post(
       .isLength({
         min: 8,
       })
-      .withMessage("Password must be atleast 5 characters"),
+      .withMessage("Password must be atleast 8 characters"),
   ],
   async (req, res) => {
     let { name, email, password, phone, bloodGroup, roll, answer } = req.body;
@@ -110,9 +110,11 @@ router.post(
   "/login",
   [
     body("email", "Enter a valid email").isEmail(),
-    body("password", "Password must be atleast 5 characters").isLength({
-      min: 5,
-    }),
+    body("password")
+      .isLength({
+        min: 8,
+      })
+      .withMessage("Password must be atleast 8 characters"),
   ],
   async (req, res) => {
     try {
@@ -126,7 +128,6 @@ router.post(
             .join(" "),
         });
       }
-      let { email, password } = req.body;
       const user_data = await User.findOne({ email });
       // validation
       if (!email || !password) {
