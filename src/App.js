@@ -14,6 +14,7 @@ import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 import PageNotFound from "./pages/pageNotFound/PageNotFound";
 import Notes from "./pages/notes/Notes";
+import Notices from "./pages/notices/Notices";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
           <Route path="/suggestion" element={<Suggestion />}></Route>
           <Route path="/notes" element={<Notes />}></Route>
+          <Route path="/notices" element={<Notices />}></Route>
 
           <Route path="*" element={<PageNotFound />}></Route>
         </Routes>

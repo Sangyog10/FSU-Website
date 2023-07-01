@@ -79,7 +79,7 @@ const Nav = (props) => {
               </NavLink>
             </li>
             <li className="nav-item mx-3">
-              <NavLink className="nav-link text-light" to="/contact">
+              <NavLink className="nav-link text-light" to="/notices">
                 Notices
               </NavLink>
             </li>
