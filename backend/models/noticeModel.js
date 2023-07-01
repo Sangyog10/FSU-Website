@@ -14,4 +14,5 @@ const noticeSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Notices", noticeSchema);
+const Notice = mongoose.model("Notices", noticeSchema);
+export default Notice;
