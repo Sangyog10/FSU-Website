@@ -64,6 +64,18 @@ const ForgotPassword = () => {
                     required
                     value={email}
                   />
+
+                  <MDBInput
+                    wrapperClass="mb-4 mx-5 w-100"
+                    labelClass="text-white"
+                    id="formControlLg"
+                    type="text"
+                    size="60px"
+                    placeholder="Enter your birth place"
+                    onChange={(e) => setAnswer(e.target.value)}
+                    required
+                    value={answer}
+                  />
                   <MDBInput
                     wrapperClass="mb-4 mx-5 w-100"
                     labelClass="text-white"
@@ -75,17 +87,6 @@ const ForgotPassword = () => {
                     onChange={(e) => setnewPassword(e.target.value)}
                     required
                     value={newPassword}
-                  />
-                  <MDBInput
-                    wrapperClass="mb-4 mx-5 w-100"
-                    labelClass="text-white"
-                    id="formControlLg"
-                    type="text"
-                    size="60px"
-                    placeholder="Enter your birth place"
-                    onChange={(e) => setAnswer(e.target.value)}
-                    required
-                    value={answer}
                   />
                   <button type="submit" className="btn btn-primary">
                     Change Password

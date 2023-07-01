@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema(
     roll: {
       type: String,
       required: true,
+      unique: true,
     },
     bloodGroup: {
       type: String,
@@ -32,12 +33,8 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    role: {
-      type: Number,
-      default: 0,
-    },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Users", userSchema);
+export default mongoose.model("Students", userSchema);
